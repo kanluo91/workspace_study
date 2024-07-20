@@ -14,6 +14,8 @@
 		4B8F24DC2C4B65BE005B25D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B8F24DB2C4B65BE005B25D3 /* Assets.xcassets */; };
 		4B8F24DF2C4B65BE005B25D3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4B8F24DE2C4B65BE005B25D3 /* Base */; };
 		4B8F24E82C4B6787005B25D3 /* 泛型.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8F24E72C4B6787005B25D3 /* 泛型.swift */; };
+		4B8F24EA2C4B70B8005B25D3 /* 关联类型.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8F24E92C4B70B8005B25D3 /* 关联类型.swift */; };
+		4B8F24EC2C4B8C18005B25D3 /* 多线程.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8F24EB2C4B8C18005B25D3 /* 多线程.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		4B8F24DE2C4B65BE005B25D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B8F24E02C4B65BE005B25D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B8F24E72C4B6787005B25D3 /* 泛型.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "泛型.swift"; sourceTree = "<group>"; };
+		4B8F24E92C4B70B8005B25D3 /* 关联类型.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "关联类型.swift"; sourceTree = "<group>"; };
+		4B8F24EB2C4B8C18005B25D3 /* 多线程.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "多线程.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				4B8F24E72C4B6787005B25D3 /* 泛型.swift */,
+				4B8F24E92C4B70B8005B25D3 /* 关联类型.swift */,
+				4B8F24EB2C4B8C18005B25D3 /* 多线程.swift */,
 			);
 			path = Demos;
 			sourceTree = "<group>";
@@ -149,8 +155,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B8F24EC2C4B8C18005B25D3 /* 多线程.swift in Sources */,
 				4B8F24D72C4B65BC005B25D3 /* ViewController.swift in Sources */,
 				4B8F24E82C4B6787005B25D3 /* 泛型.swift in Sources */,
+				4B8F24EA2C4B70B8005B25D3 /* 关联类型.swift in Sources */,
 				4B8F24D32C4B65BC005B25D3 /* AppDelegate.swift in Sources */,
 				4B8F24D52C4B65BC005B25D3 /* SceneDelegate.swift in Sources */,
 			);
