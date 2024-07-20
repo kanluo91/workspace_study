@@ -14,6 +14,7 @@
 		4B8F24B62C4B5E15005B25D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B8F24B52C4B5E15005B25D3 /* Assets.xcassets */; };
 		4B8F24B92C4B5E15005B25D3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4B8F24B82C4B5E15005B25D3 /* Base */; };
 		4B8F24BC2C4B5E15005B25D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B8F24BB2C4B5E15005B25D3 /* main.m */; };
+		4B8F24C52C4B5EBD005B25D3 /* LKSecurityTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B8F24C42C4B5EBD005B25D3 /* LKSecurityTools.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		4B8F24B82C4B5E15005B25D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B8F24BA2C4B5E15005B25D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B8F24BB2C4B5E15005B25D3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4B8F24C32C4B5EBD005B25D3 /* LKSecurityTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKSecurityTools.h; sourceTree = "<group>"; };
+		4B8F24C42C4B5EBD005B25D3 /* LKSecurityTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKSecurityTools.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +64,7 @@
 		4B8F24A82C4B5E13005B25D3 /* ReverseSecurity */ = {
 			isa = PBXGroup;
 			children = (
+				4B8F24C22C4B5E91005B25D3 /* Secruity */,
 				4B8F24A92C4B5E13005B25D3 /* AppDelegate.h */,
 				4B8F24AA2C4B5E13005B25D3 /* AppDelegate.m */,
 				4B8F24AC2C4B5E13005B25D3 /* SceneDelegate.h */,
@@ -74,6 +78,15 @@
 				4B8F24BB2C4B5E15005B25D3 /* main.m */,
 			);
 			path = ReverseSecurity;
+			sourceTree = "<group>";
+		};
+		4B8F24C22C4B5E91005B25D3 /* Secruity */ = {
+			isa = PBXGroup;
+			children = (
+				4B8F24C32C4B5EBD005B25D3 /* LKSecurityTools.h */,
+				4B8F24C42C4B5EBD005B25D3 /* LKSecurityTools.m */,
+			);
+			path = Secruity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B8F24C52C4B5EBD005B25D3 /* LKSecurityTools.m in Sources */,
 				4B8F24B12C4B5E13005B25D3 /* ViewController.m in Sources */,
 				4B8F24AB2C4B5E13005B25D3 /* AppDelegate.m in Sources */,
 				4B8F24BC2C4B5E15005B25D3 /* main.m in Sources */,
