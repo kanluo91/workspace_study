@@ -9,10 +9,13 @@
 
 @implementation LKSecurityTools
 
-+(NSString *) md5With:(NSString *)inputStr{
-    
++(NSString *) md5:(NSString *)input{
+    if(input == nil) return nil;
     
 }
 
++(NSString *) base64:(NSString *)input{
+    if(input == nil) return nil;
+}
 
 @end

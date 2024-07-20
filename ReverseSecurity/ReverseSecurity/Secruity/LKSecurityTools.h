@@ -11,7 +11,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LKSecurityTools : NSObject
 
-+(NSString *) md5With:(NSString *)inputStr;
++(NSString *) md5:(NSString *)input;
+
++(NSString *) base64:(NSString *)input;
 
 @end
 
