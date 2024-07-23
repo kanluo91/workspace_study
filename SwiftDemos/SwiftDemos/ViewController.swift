@@ -16,8 +16,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
+        self.title = "swift 学习"
         
         let tableV = UITableView(frame: self.view.frame)
+//        tableV.backgroundColor = .green
         tableV.delegate = self
         tableV.dataSource = self
         self.view.addSubview(tableV)

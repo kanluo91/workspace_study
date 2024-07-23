@@ -78,7 +78,9 @@ func thread_2(){
     
     let group = dispatch_group_t()
     
-    
+    let job1 = DispatchWorkItem {
+        print("job1")
+    }
     
     
     
