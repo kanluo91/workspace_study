@@ -19,9 +19,13 @@ public class Main {
         System.out.println(Character.BYTES);
 
 
-        /// 多线程
-        TheadDemo td = new TheadDemo();
-        td.thread_1();
+//        /// 多线程
+//        TheadDemo td = new TheadDemo();
+//        td.thread_1();
 
+        MyDog myDog = new MyDog();
+        myDog.name = "旺财";
+        myDog.eat();
+        System.out.println("狗的年龄" + myDog.age);
     }
 }
