@@ -12,6 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApp"
         tools:targetApi="31">
+        <service
+            android:name=".service.MyIntentService"
+            android:exported="false"></service>
+        <service
+            android:name=".service.MyService"
+            android:enabled="true"
+            android:exported="true" />
+
         <activity
             android:name=".LoginActivity"
             android:exported="false" />

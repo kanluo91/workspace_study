@@ -1,7 +1,11 @@
 <resources>
     <string name="app_name">我的App</string>
-    <string name="btnName">跳转页面不带返回值~</string>
-    <string name="btnName2">跳转页面带回调~</string>
+    <string name="btnName">跳转页面方式1~</string>
+    <string name="btnName2">跳转页面方式2~</string>
+    <string name="btnName3">Start Service~</string>
+    <string name="btnName4">Stop Service~</string>
+    <string name="btnName5">Bind Service~</string>
+    <string name="btnName6">UnBind Service~</string>
     <string name="showfixedstr">获取的传参</string>
     <string name="finishPage">Finish当前页</string>
 </resources>
