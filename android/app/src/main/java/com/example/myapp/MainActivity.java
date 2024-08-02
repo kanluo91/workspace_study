@@ -5,12 +5,15 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContract;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
@@ -18,6 +21,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.myapp.broadcast.MyReceiver;
+import com.example.myapp.broadcast.SortedReceiver01;
+import com.example.myapp.broadcast.SortedReceiver02;
+import com.example.myapp.broadcast.SortedReceiver03;
 import com.example.myapp.databinding.ActivityMainBinding;
 import com.example.myapp.service.MyBinder;
 import com.example.myapp.service.MyService;
@@ -39,6 +46,12 @@ public class MainActivity extends AppCompatActivity {
     private  MyBinder myBinder;
 
     private ServiceConnection serviceConnection;
+
+    private SortedReceiver01 sortedReceiver01;
+    private SortedReceiver02 sortedReceiver02;
+    private SortedReceiver03 sortedReceiver03;
+
+
     private View.OnClickListener listener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -76,6 +89,20 @@ public class MainActivity extends AppCompatActivity {
             }else if(vid == R.id.btn6){ // unbind service
                 Log.i(StringUtils.logTag,"点击了按钮" + "unbind service");
                 unbindService(serviceConnection);
+            }else if(vid == R.id.btn7){ // unbind service
+                Log.i(StringUtils.logTag,"点击了按钮" + "发送有序广播");
+                Intent intent = new Intent(MainActivity.this, MyReceiver.class);
+                intent.setAction(MyReceiver.myaction);
+                intent.putExtra("username","金角大王");
+                intent.putExtra("pwd","1232312");
+                sendBroadcast(intent);
+            }else if(vid == R.id.btn8){
+                Log.i(StringUtils.logTag,"点击了按钮" + "发送无序广播");
+                Intent intent = new Intent();
+                intent.setAction(MyReceiver.myaction);
+                intent.setPackage(getPackageName());
+                intent.putExtra("data","我是原始数据");
+                sendOrderedBroadcast(intent,null);
             }
         }
     };
@@ -94,7 +121,50 @@ public class MainActivity extends AppCompatActivity {
 
         demo_activity();
         demo_Service();
+        demo_broadcast_receiver();
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+//            demo_dynamic_register_receiver();
+//        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+//        demo_dynamic_unregister_receiver();
+    }
+
+    private void demo_dynamic_unregister_receiver() {
+
+        unregisterReceiver(sortedReceiver01);
+        unregisterReceiver(sortedReceiver02);
+        unregisterReceiver(sortedReceiver03);
+    }
+
+    /// 动态注册广播
+    @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
+    private void demo_dynamic_register_receiver() {
+
+        sortedReceiver02 = new SortedReceiver02();
+        sortedReceiver03 = new SortedReceiver03();
+
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(MyReceiver.myaction);
+
+            registerReceiver(sortedReceiver01,filter, Context.RECEIVER_NOT_EXPORTED);
+            registerReceiver(sortedReceiver02,filter, Context.RECEIVER_NOT_EXPORTED);
+            registerReceiver(sortedReceiver03,filter, Context.RECEIVER_NOT_EXPORTED);
+    }
+
+    private void demo_broadcast_receiver() {
+        Button btn7 = findViewById(R.id.btn7);
+        Button btn8 = findViewById(R.id.btn8);
+        btn7.setOnClickListener(listener);
+        btn8.setOnClickListener(listener);
     }
 
     private void demo_activity(){

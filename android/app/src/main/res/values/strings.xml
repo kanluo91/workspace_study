@@ -6,6 +6,8 @@
     <string name="btnName4">Stop Service~</string>
     <string name="btnName5">Bind Service~</string>
     <string name="btnName6">UnBind Service~</string>
+    <string name="btnName7">发送有序广播~</string>
+    <string name="btnName8">发送无序广播~</string>
     <string name="showfixedstr">获取的传参</string>
     <string name="finishPage">Finish当前页</string>
 </resources>

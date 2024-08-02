@@ -61,7 +61,7 @@
             tools:layout_editor_absoluteY="470dp" />
     </LinearLayout>
 
-    <!--    第三行-->
+    <!--    第三行： Service-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -84,33 +84,28 @@
             tools:layout_editor_absoluteX="164dp"
             tools:layout_editor_absoluteY="470dp" />
     </LinearLayout>
+    <!--    第四行： 广播-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:ignore="UselessParent">
+
+        <Button
+            android:id="@+id/btn7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btnName7"
+            tools:layout_editor_absoluteX="164dp"
+            tools:layout_editor_absoluteY="470dp" />
+
+        <Button
+            android:id="@+id/btn8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btnName8"
+            tools:layout_editor_absoluteX="164dp"
+            tools:layout_editor_absoluteY="470dp" />
+    </LinearLayout>
 
 </LinearLayout>
-
-    <!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
-    <!--    xmlns:tools="http://schemas.android.com/tools"-->
-    <!--    android:layout_width="match_parent"-->
-    <!--    android:layout_height="match_parent"-->
-    <!--    tools:context=".MainActivity">-->
-
-    <!--    <TextView-->
-    <!--        android:id="@+id/sample_text"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:text="Hello World!"-->
-    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent" />-->
-
-    <!--    <Button-->
-    <!--        android:id="@+id/btn1"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:text="@string/btnName"-->
-    <!--        tools:layout_editor_absoluteX="164dp"-->
-    <!--        tools:layout_editor_absoluteY="470dp" />-->
-
-    <!--</androidx.constraintlayout.widget.ConstraintLayout>-->
-
