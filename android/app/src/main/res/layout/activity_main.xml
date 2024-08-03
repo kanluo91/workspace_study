@@ -107,5 +107,45 @@
             tools:layout_editor_absoluteX="164dp"
             tools:layout_editor_absoluteY="470dp" />
     </LinearLayout>
+    <!--    第五行： SD练习-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:ignore="UselessParent">
+
+        <Button
+            android:id="@+id/gotosd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gotosd"
+            tools:layout_editor_absoluteX="164dp"
+            tools:layout_editor_absoluteY="470dp" />
+        <Button
+            android:id="@+id/gotoerror"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gotoerror"
+            tools:layout_editor_absoluteX="164dp"
+            tools:layout_editor_absoluteY="470dp" />
+        <Button
+            android:id="@+id/gotothread"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gotothread"
+            tools:layout_editor_absoluteX="164dp"
+            tools:layout_editor_absoluteY="470dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/iv_test"
+            android:src="@drawable/ic_launcher_foreground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
 
 </LinearLayout>

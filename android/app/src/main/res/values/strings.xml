@@ -10,4 +10,11 @@
     <string name="btnName8">发送无序广播~</string>
     <string name="showfixedstr">获取的传参</string>
     <string name="finishPage">Finish当前页</string>
+    <string name="gotosd">跳转SD页面</string>
+    <string name="downloadbtn">下载zip包</string>
+    <string name="zipbtn">解压zip包</string>
+    <string name="gotoerror">异常处理</string>
+    <string name="gotothread">跳转多线程页面</string>
+    <string name="handlerbtntitle">Handler测试1</string>
+    <string name="tv_showhandler">显示handler结果</string>
 </resources>

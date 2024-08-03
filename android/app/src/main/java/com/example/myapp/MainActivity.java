@@ -13,12 +13,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.myapp.broadcast.MyReceiver;
@@ -29,6 +33,9 @@ import com.example.myapp.databinding.ActivityMainBinding;
 import com.example.myapp.service.MyBinder;
 import com.example.myapp.service.MyService;
 import com.example.myapp.service.StringUtils;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -118,10 +125,63 @@ public class MainActivity extends AppCompatActivity {
         tv_showResult = binding.sampleText;
         tv_showResult.setText(stringFromJNI());
 
-
         demo_activity();
         demo_Service();
         demo_broadcast_receiver();
+        demo_exception();
+        demo_thread();
+        demo_sd();
+        demo_assets(); /// assets中读取图片
+    }
+
+    private void demo_assets() {
+
+        ImageView imageView = findViewById(R.id.iv_test);
+        AssetManager assetManager = getAssets();
+        try {
+            InputStream inputStream = assetManager.open("test.png");
+            Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+            imageView.setImageBitmap(bitmap);
+            inputStream.close();
+        } catch (IOException e) {
+
+        }
+
+
+    }
+
+    private void demo_thread() {
+        Button btn = findViewById(R.id.gotothread);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,TheadActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void demo_exception() {
+        Button gotoerrorBtn = findViewById(R.id.gotoerror);
+        gotoerrorBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,ErrorActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void demo_sd() {
+        Button gotoSD = findViewById(R.id.gotosd);
+        gotoSD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Intent intent = new Intent(MainActivity.this,SdActivity.class);
+//                startActivity(intent);
+            }
+        });
+
     }
 
     @Override
