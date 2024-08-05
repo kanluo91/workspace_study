@@ -33,9 +33,11 @@ import com.example.myapp.broadcast.SortedReceiver01;
 import com.example.myapp.broadcast.SortedReceiver02;
 import com.example.myapp.broadcast.SortedReceiver03;
 import com.example.myapp.databinding.ActivityMainBinding;
+import com.example.myapp.service.BinderProxy;
 import com.example.myapp.service.MyBinder;
 import com.example.myapp.service.MyService;
 import com.example.myapp.service.StringUtils;
+import com.example.myapp.service.StudentInferface;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -57,8 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ServiceConnection serviceConnection;
     private ServiceConnection serviceConnection1;
-    private IBinder studentBinder;
-
+    private StudentInferface binderProxy;
     private SortedReceiver01 sortedReceiver01;
     private SortedReceiver02 sortedReceiver02;
     private SortedReceiver03 sortedReceiver03;
@@ -151,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onServiceConnected(ComponentName name, IBinder service) {
                 Log.i(StringUtils.serviceTag,"[远端服务]-------连接上了");
-                studentBinder = service;
+                binderProxy = BinderProxy.asInterface(service);
             }
 
             @Override
@@ -183,21 +184,7 @@ public class MainActivity extends AppCompatActivity {
         btn_querystudent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Parcel sender = Parcel.obtain();
-                Parcel reply = Parcel.obtain();
-                sender.writeString("1");
-                if(studentBinder != null){
-                    try {
-                       boolean isSucc = studentBinder.transact(999,sender,reply,0);
-                       Log.i(StringUtils.serviceTag,"[远端服务是否成功]" + isSucc);
-                       if(isSucc){
-                           String result = reply.readString();
-                           Log.i(StringUtils.serviceTag,"[远端服务获取数据]" + result);
-                       }
-
-                    } catch (RemoteException e) {
-                    }
-                }
+                binderProxy.queryNamebyId("3");
             }
         });
     }
