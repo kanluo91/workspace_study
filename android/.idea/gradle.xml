@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/dataprovider" />
             <option value="$PROJECT_DIR$/logindemo" />
+            <option value="$PROJECT_DIR$/studentremoteservice" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />

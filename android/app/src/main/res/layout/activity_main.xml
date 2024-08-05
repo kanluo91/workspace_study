@@ -84,6 +84,39 @@
             tools:layout_editor_absoluteX="164dp"
             tools:layout_editor_absoluteY="470dp" />
     </LinearLayout>
+    <!--    第四行： 远端服务-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:ignore="UselessParent">
+
+        <Button
+            android:id="@+id/btn_remotebinder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_remotebinder"
+            tools:layout_editor_absoluteX="164dp"
+            tools:layout_editor_absoluteY="470dp" />
+
+        <Button
+            android:id="@+id/btn_remoteunbinder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_remoteunbinder"
+            tools:layout_editor_absoluteX="164dp"
+            tools:layout_editor_absoluteY="470dp" />
+
+        <Button
+            android:id="@+id/btn_querystudent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_querystudent"
+            tools:layout_editor_absoluteX="164dp"
+            tools:layout_editor_absoluteY="470dp" />
+
+    </LinearLayout>
+
     <!--    第四行： 广播-->
     <LinearLayout
         android:layout_width="match_parent"

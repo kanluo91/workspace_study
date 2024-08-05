@@ -17,4 +17,7 @@
     <string name="gotothread">跳转多线程页面</string>
     <string name="handlerbtntitle">Handler测试1</string>
     <string name="tv_showhandler">显示handler结果</string>
+    <string name="btn_remoteunbinder">解绑远端服务</string>
+    <string name="btn_remotebinder">绑定远端服务</string>
+    <string name="btn_querystudent">查询学生姓名</string>
 </resources>

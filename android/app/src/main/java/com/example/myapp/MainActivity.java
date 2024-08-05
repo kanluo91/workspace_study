@@ -16,9 +16,12 @@ import android.content.ServiceConnection;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Binder;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.os.Parcel;
+import android.os.RemoteException;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -53,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
     private  MyBinder myBinder;
 
     private ServiceConnection serviceConnection;
+    private ServiceConnection serviceConnection1;
+    private IBinder studentBinder;
 
     private SortedReceiver01 sortedReceiver01;
     private SortedReceiver02 sortedReceiver02;
@@ -127,11 +132,74 @@ public class MainActivity extends AppCompatActivity {
 
         demo_activity();
         demo_Service();
+        demo_service_binder();
         demo_broadcast_receiver();
         demo_exception();
         demo_thread();
         demo_sd();
         demo_assets(); /// assets中读取图片
+    }
+
+    /*调用远端服务 binder传递消息*/
+    private void demo_service_binder() {
+
+        Button btn_bindRemote = findViewById(R.id.btn_remotebinder);
+        Button btn_unbindRemote = findViewById(R.id.btn_remoteunbinder);
+        Button btn_querystudent = findViewById(R.id.btn_querystudent);
+
+        serviceConnection1 = new ServiceConnection() {
+            @Override
+            public void onServiceConnected(ComponentName name, IBinder service) {
+                Log.i(StringUtils.serviceTag,"[远端服务]-------连接上了");
+                studentBinder = service;
+            }
+
+            @Override
+            public void onServiceDisconnected(ComponentName name) {
+                Log.i(StringUtils.serviceTag,"[远端服务]-------断开了");
+            }
+        };
+
+        btn_bindRemote.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction("com.example.studentremoteservice.studentservice");
+                intent.setPackage("com.example.studentremoteservice");
+                bindService(intent,serviceConnection1,BIND_AUTO_CREATE);
+            }
+        });
+
+        btn_unbindRemote.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(serviceConnection1 != null){
+                    unbindService(serviceConnection1);
+                    Log.i(StringUtils.serviceTag,"解绑远端服务操作");
+                }
+            }
+        });
+
+        btn_querystudent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Parcel sender = Parcel.obtain();
+                Parcel reply = Parcel.obtain();
+                sender.writeString("1");
+                if(studentBinder != null){
+                    try {
+                       boolean isSucc = studentBinder.transact(999,sender,reply,0);
+                       Log.i(StringUtils.serviceTag,"[远端服务是否成功]" + isSucc);
+                       if(isSucc){
+                           String result = reply.readString();
+                           Log.i(StringUtils.serviceTag,"[远端服务获取数据]" + result);
+                       }
+
+                    } catch (RemoteException e) {
+                    }
+                }
+            }
+        });
     }
 
     private void demo_assets() {

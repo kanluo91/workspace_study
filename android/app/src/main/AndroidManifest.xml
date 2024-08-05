@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <queries>
+        <package android:name="com.example.studentremoteservice"/>
+    </queries>
     <!-- 声明要使用contentprovider的权限 -->
     <uses-permission android:name="com.kk.contentprovider.permission" />
     <uses-permission android:name="android.permission.INTERNET" />

@@ -23,3 +23,4 @@ rootProject.name = "MyApp"
 include(":app")
 include(":dataprovider")
 include(":logindemo")
+include(":studentremoteservice")
