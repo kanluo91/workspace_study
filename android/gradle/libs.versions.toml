@@ -21,4 +21,5 @@ benchmarks = { group = "com.squareup.okhttp3", name = "benchmarks", version = "3
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
 
