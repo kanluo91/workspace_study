@@ -49,4 +49,8 @@ public class MainActivity extends AppCompatActivity {
     public native String stringFromJNI();
 
     public native int jniadd(int a,int b);
+
+    public native boolean checkUserNameAndPwd(String username,String pwd);
+
+
 }
