@@ -16,6 +16,8 @@ public class FileUtils {
             for (String fileName : fileNamelist) {
                 String filePath = dirPath + File.separator + fileName;
 
+                changeFileName(filePath, targetStr1, targetStr2);
+
                 loopTravelDir(filePath,targetStr1,targetStr2);
             }
         }else{// 非目录的情况

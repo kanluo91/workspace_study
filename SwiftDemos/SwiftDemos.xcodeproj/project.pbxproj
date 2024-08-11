@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B832A1F2C689D4D00646A69 /* BasicTypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B832A1E2C689D4D00646A69 /* BasicTypeVC.swift */; };
 		4B8F24D32C4B65BC005B25D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8F24D22C4B65BC005B25D3 /* AppDelegate.swift */; };
 		4B8F24D52C4B65BC005B25D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8F24D42C4B65BC005B25D3 /* SceneDelegate.swift */; };
 		4B8F24D72C4B65BC005B25D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8F24D62C4B65BC005B25D3 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B832A1E2C689D4D00646A69 /* BasicTypeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTypeVC.swift; sourceTree = "<group>"; };
 		4B8F24CF2C4B65BC005B25D3 /* SwiftDemos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDemos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B8F24D22C4B65BC005B25D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B8F24D42C4B65BC005B25D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B832A1D2C689C4700646A69 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				4B832A1E2C689D4D00646A69 /* BasicTypeVC.swift */,
+			);
+			path = Basic;
+			sourceTree = "<group>";
+		};
 		4B8F24C62C4B65BC005B25D3 = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +72,7 @@
 		4B8F24D12C4B65BC005B25D3 /* SwiftDemos */ = {
 			isa = PBXGroup;
 			children = (
+				4B832A1D2C689C4700646A69 /* Basic */,
 				4B8F24E62C4B6776005B25D3 /* Demos */,
 				4B8F24D22C4B65BC005B25D3 /* AppDelegate.swift */,
 				4B8F24D42C4B65BC005B25D3 /* SceneDelegate.swift */,
@@ -157,6 +168,7 @@
 			files = (
 				4B8F24EC2C4B8C18005B25D3 /* 多线程.swift in Sources */,
 				4B8F24D72C4B65BC005B25D3 /* ViewController.swift in Sources */,
+				4B832A1F2C689D4D00646A69 /* BasicTypeVC.swift in Sources */,
 				4B8F24E82C4B6787005B25D3 /* 泛型.swift in Sources */,
 				4B8F24EA2C4B70B8005B25D3 /* 关联类型.swift in Sources */,
 				4B8F24D32C4B65BC005B25D3 /* AppDelegate.swift in Sources */,

@@ -27,7 +27,7 @@ class ThreadObject{
     // block operation
     func test2(){
         
-        var op1 = BlockOperation { [weak self] in
+        let op1 = BlockOperation { [weak self] in
             print("block op1")
             self?.age += 1
         }
@@ -36,7 +36,7 @@ class ThreadObject{
             print("finish op1")
         }
         
-        var op2 = BlockOperation{
+        let op2 = BlockOperation{
             print("block op2")
         }
         
@@ -44,7 +44,7 @@ class ThreadObject{
             print("finish op2")
         }
         
-        var queue = OperationQueue()
+        let queue = OperationQueue()
         queue.addOperation(op1)
         queue.addOperation(op2)
     }
@@ -66,7 +66,7 @@ func thead_1(){
         print("多线程创建方式一")
     }
     
-    var t2 = ThreadObject()
+    let t2 = ThreadObject()
     t2.test1()
 }
 
@@ -76,9 +76,9 @@ func thead_1(){
  */
 func thread_2(){
     
-    let group = dispatch_group_t()
+    _ = dispatch_group_t()
     
-    let job1 = DispatchWorkItem {
+    _ = DispatchWorkItem {
         print("job1")
     }
     
