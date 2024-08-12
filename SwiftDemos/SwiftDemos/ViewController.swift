@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     
     var datas: [String] {
-        return ["基本数据类型","泛型","多线程"]
+        return ["基本数据类型","运算符","集合","泛型","多线程"]
     }
     
     override func viewDidLoad() {
@@ -44,6 +44,12 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate{
         switch indexPath.row {
         case 0:
                 let basevc = BasicTypeVC()
+                self.navigationController?.pushViewController(basevc, animated: true)
+        case 1:
+                let basevc = 运算符()
+                self.navigationController?.pushViewController(basevc, animated: true)
+        case 2:
+                let basevc = 集合类型()
                 self.navigationController?.pushViewController(basevc, animated: true)
         default:
             NSLog("default switch")
